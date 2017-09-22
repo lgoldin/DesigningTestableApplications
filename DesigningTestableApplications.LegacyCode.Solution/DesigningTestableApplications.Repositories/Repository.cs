@@ -6,21 +6,13 @@ namespace DesigningTestableApplications.Repositories
 {
     public abstract class Repository
     {
-        private static DesigningTestableApplicationsEntities context;
+        private static DummyContext context;
 
-        public static DesigningTestableApplicationsEntities Context
+        public static DummyContext Context => context ?? (context = new DummyContext());
+
+        public static void Dispose()
         {
-            get
-            {
-                //NO ES THREAD-SAFE!! Solo para ejemplo!
-                if (context == null)
-                {
-                    context = new DesigningTestableApplicationsEntities();
-                    context.Configuration.LazyLoadingEnabled = false;
-                }
-
-                return context;
-            }
+            context = null;
         }
     }
 }

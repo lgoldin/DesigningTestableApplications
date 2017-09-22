@@ -39,9 +39,11 @@ namespace DesigningTestableApplications.Services
             //Si la suma de los ítems es mayor a 20.000, se le agregará un ítem de regalo
             if (order.GetAmount() > 20000)
             {
+                var gift = productsRepository.GetGift();
                 order.OrderItems.Add(new OrderItem
                 {
-                    Product = this.productsRepository.GetGift(),
+                    Product = gift,
+                    ProductId = gift.Id,
                     Quantity = 1
                 });
             }

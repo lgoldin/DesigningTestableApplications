@@ -10,13 +10,13 @@ namespace DesigningTestableApplications.Repositories
     {
         public IList<Order> GetOrders()
         {
-            return Context.Orders.Include("OrderItems.Product.Prices").Include(x => x.Customer).Include(x => x.Currency).ToList();
+            return Context.Orders.ToList();
         }
 
         public void AddOrder(Order order)
         {
             Context.Orders.Add(order);
-            Context.SaveChanges();
+            order.Id = Context.Orders.Max(x => x.Id) + 1;
         }
     }
 }

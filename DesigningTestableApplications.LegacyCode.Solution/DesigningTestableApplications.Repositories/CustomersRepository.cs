@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using DesigningTestableApplications.Interfaces.Repositories;
 using DesigningTestableApplications.Model;
-using DesigningTestableApplications.Interfaces;
 
 namespace DesigningTestableApplications.Repositories
 {

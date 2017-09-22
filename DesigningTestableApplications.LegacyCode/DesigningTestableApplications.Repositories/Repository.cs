@@ -7,10 +7,7 @@ namespace DesigningTestableApplications.Repositories
     {
         private static DummyContext context;
 
-        public static DummyContext Context
-        {
-            get { return context ?? (context = new DummyContext()); }
-        }
+        public static DummyContext Context => context ?? (context = new DummyContext());
 
         public static void Dispose()
         {
