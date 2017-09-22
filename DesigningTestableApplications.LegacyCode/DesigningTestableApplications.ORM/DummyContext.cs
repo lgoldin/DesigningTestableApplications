@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DesigningTestableApplications.Model;
 
 namespace DesigningTestableApplications.ORM
@@ -47,6 +48,11 @@ namespace DesigningTestableApplications.ORM
                 new Price { Id = 5, Product = productSmartwatch, ProductId = 5, Currency = currencyArs, CurrencyId = 1, Amount = 4999.99M },
                 new Price { Id = 6, Product = productGift, ProductId = 6, Currency = currencyArs, CurrencyId = 1, Amount = 0 }
             };
+
+            foreach (var product in this.Products)
+            {
+                product.Prices = this.Prices.Where(x => x.ProductId == product.Id).ToList();
+            }
 
             this.Customers = new List<Customer>
             {
