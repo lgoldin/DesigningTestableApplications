@@ -23,7 +23,6 @@ namespace DesigningTestableApplications.Services
             order.OrderItems.ToList().ForEach(x => x.Product = productsRepository.GetById(x.ProductId));
 
             //Si la suma de los ítems es mayor a 20.000, se le agregará un ítem de regalo
-            //if (order.OrderItems.Sum(x => x.Quantity * (x.Product.Prices.First(y => y.Currency.Id == order.CurrencyId)).Amount) > 20000)
             if (order.OrderItems.Sum(x => x.Quantity *  (x.Product.Prices.First(y => y.Currency.Id == order.CurrencyId)).Amount) > 20000)
             {
                 var gift = productsRepository.GetGift();
