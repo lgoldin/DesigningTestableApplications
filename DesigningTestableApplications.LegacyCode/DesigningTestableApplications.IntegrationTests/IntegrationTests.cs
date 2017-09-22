@@ -13,14 +13,12 @@ namespace DesigningTestableApplications.IntegrationTests
     [TestClass]
     public class IntegrationTests
     {
-        private DummyContext dbContext;
-        private TransactionScope transactionScope;
+        private DummyContext context;
 
         [TestInitialize]
         public void SetUp()
         {
-            this.dbContext = Repository.Context;
-            this.transactionScope = new TransactionScope(TransactionScopeOption.RequiresNew);
+            this.context = Repository.Context;
         }
 
         [TestMethod]
@@ -40,12 +38,11 @@ namespace DesigningTestableApplications.IntegrationTests
                 }
             });
 
-            Order order = this.dbContext.Orders.FirstOrDefault();
+            Order order = this.context.Orders.FirstOrDefault();
             Assert.IsNotNull(order);
             Assert.AreEqual(1, order.CustomerId);
             Assert.AreEqual(1, order.Customer.Id);
             Assert.AreEqual(1, order.CurrencyId);
-            Assert.AreEqual(1, order.Currency.Id);
             Assert.AreEqual(3, order.OrderItems.Count);
             Assert.AreEqual(2, order.OrderItems.ElementAt(0).ProductId);
             Assert.AreEqual(1, order.OrderItems.ElementAt(0).Quantity);
@@ -71,12 +68,11 @@ namespace DesigningTestableApplications.IntegrationTests
                 }
             });
 
-            Order order = this.dbContext.Orders.FirstOrDefault();
+            Order order = this.context.Orders.FirstOrDefault();
             Assert.IsNotNull(order);
             Assert.AreEqual(2, order.CustomerId);
             Assert.AreEqual(2, order.Customer.Id);
             Assert.AreEqual(1, order.CurrencyId);
-            Assert.AreEqual(1, order.Currency.Id);
             Assert.AreEqual(1, order.OrderItems.Count);
             Assert.AreEqual(3, order.OrderItems.ElementAt(0).ProductId);
             Assert.AreEqual(1, order.OrderItems.ElementAt(0).Quantity);
@@ -85,7 +81,7 @@ namespace DesigningTestableApplications.IntegrationTests
         [TestCleanup]
         public void CleanUp()
         {
-            this.transactionScope.Dispose();
+            Repository.Dispose();
         }
     }
 }

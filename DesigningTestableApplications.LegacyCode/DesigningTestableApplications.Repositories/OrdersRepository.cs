@@ -14,6 +14,7 @@ namespace DesigningTestableApplications.Repositories
         public void AddOrder(Order order)
         {
             Context.Orders.Add(order);
+            order.Id = Context.Orders.Max(x => x.Id) + 1;
         }
     }
 }

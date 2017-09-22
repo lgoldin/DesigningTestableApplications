@@ -1,4 +1,5 @@
-﻿using DesigningTestableApplications.ORM;
+﻿using System;
+using DesigningTestableApplications.ORM;
 
 namespace DesigningTestableApplications.Repositories
 {
@@ -9,6 +10,11 @@ namespace DesigningTestableApplications.Repositories
         public static DummyContext Context
         {
             get { return context ?? (context = new DummyContext()); }
+        }
+
+        public static void Dispose()
+        {
+            context = null;
         }
     }
 }

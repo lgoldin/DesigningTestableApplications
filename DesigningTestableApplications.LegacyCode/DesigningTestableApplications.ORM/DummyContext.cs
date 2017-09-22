@@ -51,8 +51,14 @@ namespace DesigningTestableApplications.ORM
             this.Customers = new List<Customer>
             {
                 new Customer { Id = 1, FirstName = "John", LastName = "Doe", Email = "jdoe@baufest.com", Address = "Roosevelt 1655", Phone = "4855-5572", Active = true, Points =  0 },
-                new Customer { Id = 1, FirstName = "Mary", LastName = "Jane", Email = "mjane@baufest.com", Address = "Calle Falsa 123", Phone = "4962-3699", Active = true, Points =  0 }
+                new Customer { Id = 2, FirstName = "Mary", LastName = "Jane", Email = "mjane@baufest.com", Address = "Calle Falsa 123", Phone = "4962-3699", Active = true, Points =  0 }
             };
+
+            this.Orders = new List<Order>();
+
+            this.OrderItems = new List<OrderItem>();
+
+            this.OrderDetails = new List<OrderDetail>();
         }
     }
 }

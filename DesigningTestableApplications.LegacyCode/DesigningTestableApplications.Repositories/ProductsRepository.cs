@@ -12,7 +12,15 @@ namespace DesigningTestableApplications.Repositories
 
         public Product GetById(int id)
         {
-            return Context.Products.FirstOrDefault(x => x.Id == id);
+            var prices = Context.Prices.Where(x => x.ProductId == id).ToList();
+            var product = Context.Products.FirstOrDefault(x => x.Id == id);
+            if (product != null)
+            {
+                product.Prices = prices;
+                return product;
+            }
+
+            return null;
         }
     }
 }
