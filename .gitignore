@@ -6,3 +6,4 @@ TestResults
 *.trx
 _ReSharper*
 Debug
+*.js
