@@ -4,13 +4,13 @@
 describe("Calculator Service Tests", () => {
     it("Do magic", () => {
         var calculator = jasmine.createSpyObj("calculator", ["Sum"]);
-        calculator.Sum(10, 20).and.returnValue(30);
+        calculator.Sum.andReturn(30);
+        var calculatorService = new CalculatorService(<ICalculator>calculator);
 
-        var calculatorService: CalculatorService = new CalculatorService(<ICalculator>calculator);
-
-        var result:string = calculatorService.DoMagic(10, 20);
+        var result: string = calculatorService.DoMagic(10, 20);
 
         expect(result).toBe("El resultado de sumar 10 y 20 es 30");
+
         expect(calculator.Sum).toHaveBeenCalledWith(10, 20);
     });
 });
