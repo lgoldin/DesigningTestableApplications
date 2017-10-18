@@ -7,3 +7,4 @@ TestResults
 _ReSharper*
 Debug
 *.js
+/DesigningTestableApplications.TypeScript.Exercise
