@@ -1,8 +1,8 @@
 ﻿///<reference path="Jugador.ts"/>
 
 class Equipo implements IEquipo {
-    jugadores: Jugador[];
-    cotizacion: number;
+    jugadores: Jugador[] = [];
+    cotizacion: number = 0;
 
     agregarJugador(jugador: Jugador): void {
         //Implementar

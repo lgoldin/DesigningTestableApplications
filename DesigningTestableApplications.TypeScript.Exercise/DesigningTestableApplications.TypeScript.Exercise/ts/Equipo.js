@@ -1,6 +1,8 @@
 ///<reference path="Jugador.ts"/>
 var Equipo = /** @class */ (function () {
     function Equipo() {
+        this.jugadores = [];
+        this.cotizacion = 0;
     }
     Equipo.prototype.agregarJugador = function (jugador) {
         //Implementar

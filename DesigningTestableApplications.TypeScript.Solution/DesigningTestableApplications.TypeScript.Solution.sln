@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesigningTestableApplications.TypeScript.Solution", "DesigningTestableApplications.TypeScript.Solution\DesigningTestableApplications.TypeScript.Solution.csproj", "{BA274F6C-889E-41AE-9BD2-815BB86B07AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesigningTestableApplications.TypeScript.Solution.Tests", "DesigningTestableApplications.TypeScript.Solution.Tests\DesigningTestableApplications.TypeScript.Solution.Tests.csproj", "{BE7EB402-BF8F-4B28-8153-DAAD6456643C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BA274F6C-889E-41AE-9BD2-815BB86B07AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA274F6C-889E-41AE-9BD2-815BB86B07AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA274F6C-889E-41AE-9BD2-815BB86B07AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7EB402-BF8F-4B28-8153-DAAD6456643C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7EB402-BF8F-4B28-8153-DAAD6456643C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7EB402-BF8F-4B28-8153-DAAD6456643C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7EB402-BF8F-4B28-8153-DAAD6456643C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
