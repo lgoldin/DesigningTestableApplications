@@ -4,7 +4,7 @@
 describe("Calculator Service Tests", () => {
     it("Do magic", () => {
         var calculator = jasmine.createSpyObj("calculator", ["Sum"]);
-        calculator.Sum.andReturn(30);
+        calculator.Sum.and.returnValue(30);
         var calculatorService = new CalculatorService(<ICalculator>calculator);
 
         var result: string = calculatorService.DoMagic(10, 20);
